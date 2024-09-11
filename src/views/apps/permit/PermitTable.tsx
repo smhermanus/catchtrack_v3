@@ -136,8 +136,8 @@ const userPermitObj: UserPermitType = {
   permit4: { icon: 'ri-pie-chart-2-line', color: 'success' },
   permit5: { icon: 'ri-user-3-line', color: 'primary' },
   permit6: { icon: 'ri-user-3-line', color: 'secondary' },
-  permit7: { icon: 'ri-user-3-line', color: 'info' },
-  permit8: { icon: 'ri-user-3-line', color: 'success' }
+  permit7: { icon: 'ri-user-3-line', color: 'primary' },
+  permit8: { icon: 'ri-user-3-line', color: 'secondary' }
 }
 
 const userStatusObj: UserStatusType = {

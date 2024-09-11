@@ -8,18 +8,18 @@ export const db: InvoiceType[] = [
   {
     id: '4987',
     issuedDate: `13 ${currentMonth} ${now.getFullYear()}`,
-    address: '7777 Mendez Plains',
-    company: 'Hall-Robbins PLC',
+    address: 'Baker Street, Claremont',
+    company: 'Claremont Fisheries',
     companyEmail: 'don85@johnson.com',
     country: 'South Africa',
-    contact: '(27) 865-4180',
+    contact: '(+27) 021 865-4180',
     name: 'Jordan Stevenson',
-    service: 'Software Development',
+    service: 'Outlet selling fish and chips',
     total: 3428,
     avatar: '',
     avatarColor: 'primary',
     invoiceStatus: 'Paid',
-    balance: 'R724',
+    balance: 'R7 024',
     dueDate: `23 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -29,9 +29,9 @@ export const db: InvoiceType[] = [
     company: 'Mccann LLC and Sons',
     companyEmail: 'brenda49@taylor.info',
     country: 'South Africa',
-    contact: '(226) 204-8287',
+    contact: '(27) 021 204-8287',
     name: 'Stephanie Burns',
-    service: 'UI/UX Design & Development',
+    service: 'selling fish and chips',
     total: 5219,
     avatar: '/images/avatars/1.png',
     invoiceStatus: 'Downloaded',
@@ -45,9 +45,9 @@ export const db: InvoiceType[] = [
     company: 'Leonard-Garcia and Sons',
     companyEmail: 'smithtiffany@powers.com',
     country: 'South Africa',
-    contact: '(955) 676-1076',
+    contact: '(021) 676-1076',
     name: 'Tony Herrera',
-    service: 'Unlimited Extended License',
+    service: 'selling fish and chips',
     total: 3719,
     avatar: '/images/avatars/2.png',
     invoiceStatus: 'Paid',
@@ -61,9 +61,9 @@ export const db: InvoiceType[] = [
     company: 'Smith, Miller and Henry LLC',
     companyEmail: 'mejiageorge@lee-perez.com',
     country: 'South Africa',
-    contact: '(832) 323-6914',
+    contact: '(021) 323-6914',
     name: 'Kevin Patton',
-    service: 'Software Development',
+    service: 'selling fish and chips',
     total: 4749,
     avatar: '/images/avatars/3.png',
     invoiceStatus: 'Sent',
@@ -77,13 +77,13 @@ export const db: InvoiceType[] = [
     company: 'Garcia-Cameron and Sons',
     companyEmail: 'brandon07@pierce.com',
     country: 'South Africa',
-    contact: '(970) 982-3353',
+    contact: '(021) 982-3353',
     name: 'Mrs. Julie Donovan MD',
     service: 'UI/UX Design & Development',
     total: 4056,
     avatar: '/images/avatars/4.png',
     invoiceStatus: 'Draft',
-    balance: '$815',
+    balance: 'R815',
     dueDate: `30 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -117,7 +117,7 @@ export const db: InvoiceType[] = [
     avatar: '',
     avatarColor: 'success',
     invoiceStatus: 'Draft',
-    balance: '$407',
+    balance: 'R407',
     dueDate: `22 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -133,7 +133,7 @@ export const db: InvoiceType[] = [
     total: 4309,
     avatar: '/images/avatars/5.png',
     invoiceStatus: 'Paid',
-    balance: '-$205',
+    balance: '-R205',
     dueDate: `10 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -159,13 +159,13 @@ export const db: InvoiceType[] = [
     company: 'Page-Wise PLC',
     companyEmail: 'bwilson@norris-brock.com',
     country: 'South Africa',
-    contact: '(956) 803-2008',
+    contact: '(021) 803-2008',
     name: 'Susan Dickerson',
-    service: 'Software Development',
+    service: 'selling fish and chips',
     total: 4776,
     avatar: '/images/avatars/7.png',
     invoiceStatus: 'Downloaded',
-    balance: '$305',
+    balance: 'R305',
     dueDate: `02 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -181,7 +181,7 @@ export const db: InvoiceType[] = [
     total: 3789,
     avatar: '/images/avatars/8.png',
     invoiceStatus: 'Partial Payment',
-    balance: '$666',
+    balance: 'R566',
     dueDate: `18 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -245,7 +245,7 @@ export const db: InvoiceType[] = [
     total: 5285,
     avatar: '/images/avatars/4.png',
     invoiceStatus: 'Partial Payment',
-    balance: '-$202',
+    balance: '-R202',
     dueDate: `02 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -261,7 +261,7 @@ export const db: InvoiceType[] = [
     total: 3668,
     avatar: '/images/avatars/5.png',
     invoiceStatus: 'Downloaded',
-    balance: '$731',
+    balance: 'R731',
     dueDate: `15 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -278,7 +278,7 @@ export const db: InvoiceType[] = [
     avatar: '',
     avatarColor: 'warning',
     invoiceStatus: 'Sent',
-    balance: '-$344',
+    balance: '-R344',
     dueDate: `17 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -294,7 +294,7 @@ export const db: InvoiceType[] = [
     total: 3198,
     avatar: '/images/avatars/6.png',
     invoiceStatus: 'Partial Payment',
-    balance: '-$253',
+    balance: '-R253',
     dueDate: `16 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -327,7 +327,7 @@ export const db: InvoiceType[] = [
     total: 5612,
     avatar: '/images/avatars/7.png',
     invoiceStatus: 'Downloaded',
-    balance: '$883',
+    balance: 'R883',
     dueDate: `12 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -506,7 +506,7 @@ export const db: InvoiceType[] = [
     total: 3102,
     avatar: '/images/avatars/7.png',
     invoiceStatus: 'Partial Payment',
-    balance: '-$153',
+    balance: '-R153',
     dueDate: `25 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -538,7 +538,7 @@ export const db: InvoiceType[] = [
     total: 2825,
     avatar: '/images/avatars/1.png',
     invoiceStatus: 'Partial Payment',
-    balance: '-$459',
+    balance: '-R459',
     dueDate: `14 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -804,7 +804,7 @@ export const db: InvoiceType[] = [
     avatar: '',
     avatarColor: 'info',
     invoiceStatus: 'Draft',
-    balance: '$762',
+    balance: 'R762',
     dueDate: `12 ${currentMonth} ${now.getFullYear()}`
   },
   {
@@ -820,7 +820,7 @@ export const db: InvoiceType[] = [
     total: 3171,
     avatar: '/images/avatars/8.png',
     invoiceStatus: 'Paid',
-    balance: '-$205',
+    balance: '-R205',
     dueDate: `25 ${currentMonth} ${now.getFullYear()}`
   }
 ]

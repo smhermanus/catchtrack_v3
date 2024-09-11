@@ -258,7 +258,7 @@ const ProductCategoryTable = () => {
         header: 'Total Earning',
         cell: ({ row }) => (
           <Typography>
-            {row.original.totalEarning.toLocaleString('en-IN', { style: 'currency', currency: 'USD' })}
+            {row.original.totalEarning.toLocaleString('en-IN', { style: 'currency', currency: 'ZAR' })}
           </Typography>
         )
       }),

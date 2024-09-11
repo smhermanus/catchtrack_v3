@@ -27,8 +27,8 @@ const StoreCurrency = () => {
             value={currency}
             onChange={e => setCurrency(e.target.value)}
           >
-            <MenuItem value='USD'>USD</MenuItem>
-            <MenuItem value='INR'>INR</MenuItem>
+            <MenuItem value='ZAR'>ZAR</MenuItem>
+            <MenuItem value='USA'>USA</MenuItem>
             <MenuItem value='Euro'>Euro</MenuItem>
             <MenuItem value='Pound'>Pound</MenuItem>
           </Select>

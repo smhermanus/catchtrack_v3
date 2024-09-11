@@ -18,32 +18,32 @@ import './print.css'
 // Vars
 const data = [
   {
-    Item: 'Premium Branding Package',
-    Description: 'Branding & Promotion',
+    Item: 'Hake',
+    Description: '100 kg',
     Hours: 48,
     Qty: 1,
-    Total: '$32'
+    Total: 'R22 332'
   },
   {
-    Item: 'Social Media',
-    Description: 'Social media templates',
+    Item: 'Snoek',
+    Description: '150 kg',
     Hours: 42,
     Qty: 1,
-    Total: '$28'
+    Total: 'R28 441'
   },
   {
-    Item: 'Web Design',
-    Description: 'Web designing package',
+    Item: 'Tuna',
+    Description: '120 kg',
     Hours: 46,
     Qty: 1,
-    Total: '$24'
+    Total: 'R32 214'
   },
   {
-    Item: 'SEO',
-    Description: 'Search engine optimization',
+    Item: 'Salmon',
+    Description: '50 kg',
     Hours: 40,
     Qty: 1,
-    Total: '$22'
+    Total: 'R22 222'
   }
 ]
 
@@ -60,9 +60,9 @@ const PreviewCard = ({ invoiceData, id }: { invoiceData?: InvoiceType; id: strin
                     <Logo />
                   </div>
                   <div>
-                    <Typography color='text.primary'>Office 149, 450 South Brand Brooklyn</Typography>
-                    <Typography color='text.primary'>San Diego County, CA 91905, USA</Typography>
-                    <Typography color='text.primary'>+1 (123) 456 7891, +44 (876) 543 2198</Typography>
+                    <Typography color='text.primary'>Office 149, Paarden Island</Typography>
+                    <Typography color='text.primary'>Cape Town, South Africa, SA</Typography>
+                    <Typography color='text.primary'>+27 (021) 456 7891, +27 (876) 543 2198</Typography>
                   </div>
                 </div>
                 <div className='flex flex-col gap-6'>
@@ -99,15 +99,15 @@ const PreviewCard = ({ invoiceData, id }: { invoiceData?: InvoiceType; id: strin
                   <div>
                     <div className='flex items-center gap-4'>
                       <Typography className='min-is-[100px]'>Total Due:</Typography>
-                      <Typography>$12,110.55</Typography>
+                      <Typography>R62,110.55</Typography>
                     </div>
                     <div className='flex items-center gap-4'>
                       <Typography className='min-is-[100px]'>Bank name:</Typography>
-                      <Typography>American Bank</Typography>
+                      <Typography>NedBank</Typography>
                     </div>
                     <div className='flex items-center gap-4'>
                       <Typography className='min-is-[100px]'>Country:</Typography>
-                      <Typography>United States</Typography>
+                      <Typography>South Africa</Typography>
                     </div>
                     <div className='flex items-center gap-4'>
                       <Typography className='min-is-[100px]'>IBAN:</Typography>
@@ -115,7 +115,7 @@ const PreviewCard = ({ invoiceData, id }: { invoiceData?: InvoiceType; id: strin
                     </div>
                     <div className='flex items-center gap-4'>
                       <Typography className='min-is-[100px]'>SWIFT code:</Typography>
-                      <Typography>BR91905</Typography>
+                      <Typography>NEDZAFF</Typography>
                     </div>
                   </div>
                 </div>
@@ -173,26 +173,26 @@ const PreviewCard = ({ invoiceData, id }: { invoiceData?: InvoiceType; id: strin
                 <div className='flex items-center justify-between'>
                   <Typography>Subtotal:</Typography>
                   <Typography className='font-medium' color='text.primary'>
-                    $1800
+                    R105 209
                   </Typography>
                 </div>
                 <div className='flex items-center justify-between'>
                   <Typography>Discount:</Typography>
                   <Typography className='font-medium' color='text.primary'>
-                    $28
+                    R2 500
                   </Typography>
                 </div>
                 <div className='flex items-center justify-between'>
                   <Typography>Tax:</Typography>
                   <Typography className='font-medium' color='text.primary'>
-                    21%
+                    15%
                   </Typography>
                 </div>
                 <Divider className='mlb-2' />
                 <div className='flex items-center justify-between'>
                   <Typography>Total:</Typography>
                   <Typography className='font-medium' color='text.primary'>
-                    $1690
+                    R118 115
                   </Typography>
                 </div>
               </div>
@@ -206,8 +206,7 @@ const PreviewCard = ({ invoiceData, id }: { invoiceData?: InvoiceType; id: strin
               <Typography component='span' className='font-medium' color='text.primary'>
                 Note:
               </Typography>{' '}
-              It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance
-              projects. Thank You!
+              Thank You for your business.
             </Typography>
           </Grid>
         </Grid>

@@ -64,10 +64,10 @@ const projectTable: ProjectListDataType[] = [
     id: 1,
     hours: '18:42',
     progressValue: 78,
-    totalTask: '122/240',
+    totalTask: '11/15',
     progressColor: 'success',
-    projectType: 'React Project',
-    projectTitle: 'BGC eCommerce App',
+    projectType: 'Permit Applications',
+    projectTitle: 'Register New Permits',
     img: '/images/logos/react-bg.png'
   },
   {
@@ -76,8 +76,8 @@ const projectTable: ProjectListDataType[] = [
     progressValue: 18,
     totalTask: '9/56',
     progressColor: 'error',
-    projectType: 'Figma Project',
-    projectTitle: 'Falcon Logo Design',
+    projectType: 'Project 1',
+    projectTitle: 'Task 2',
     img: '/images/logos/figma-bg.png'
   },
   {
@@ -260,13 +260,13 @@ const ProjectListTable = () => {
   return (
     <Card>
       <CardHeader
-        title='Project List'
+        title='Tasks List'
         className='flex flex-wrap gap-4'
         action={
           <DebouncedInput
             value={globalFilter ?? ''}
             onChange={value => setGlobalFilter(String(value))}
-            placeholder='Search Project'
+            placeholder='Search Tasks'
           />
         }
       />

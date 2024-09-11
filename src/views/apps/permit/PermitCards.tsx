@@ -25,11 +25,11 @@ type CardDataType = {
 
 // Vars
 const cardData: CardDataType[] = [
-  { totalUsers: 4, title: 'Administrator', avatars: ['1.png', '2.png', '3.png', '4.png'] },
-  { totalUsers: 7, title: 'Skipper', avatars: ['5.png', '6.png', '7.png'] },
-  { totalUsers: 5, title: 'Monitor', avatars: ['4.png', '5.png', '6.png'] },
-  { totalUsers: 6, title: 'Truck Driver', avatars: ['1.png', '2.png', '3.png'] },
-  { totalUsers: 10, title: 'Factory Controller', avatars: ['4.png', '5.png', '6.png'] }
+  { totalUsers: 4, title: 'Permit 1', avatars: ['1.png', '2.png', '3.png', '4.png'] },
+  { totalUsers: 7, title: 'Permit 2', avatars: ['5.png', '6.png', '7.png'] },
+  { totalUsers: 5, title: 'Permit 3', avatars: ['4.png', '5.png', '6.png'] },
+  { totalUsers: 6, title: 'Permit 4', avatars: ['1.png', '2.png', '3.png'] },
+  { totalUsers: 10, title: 'Permit 5', avatars: ['4.png', '5.png', '6.png'] }
 ]
 
 const PermitCards = () => {

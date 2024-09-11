@@ -21,8 +21,8 @@ export const db: KanbanType = {
   tasks: [
     {
       id: 1,
-      title: 'Research FAQ page UX',
-      badgeText: ['UX'],
+      title: 'Compliance and Permit Renewal',
+      badgeText: ['Permit'],
       attachments: 4,
       comments: 12,
       assigned: [
@@ -34,8 +34,8 @@ export const db: KanbanType = {
     },
     {
       id: 2,
-      title: 'Review Javascript code',
-      badgeText: ['Code Review'],
+      title: 'Premier Fishing Skipper left 10/08/2024',
+      badgeText: ['Premier'],
       attachments: 2,
       comments: 8,
       assigned: [
@@ -46,7 +46,7 @@ export const db: KanbanType = {
     },
     {
       id: 3,
-      title: 'Review completed Apps',
+      title: 'Review completed Permits',
       badgeText: ['Dashboard'],
       attachments: 8,
       comments: 17,
@@ -58,7 +58,7 @@ export const db: KanbanType = {
     },
     {
       id: 4,
-      title: 'Find new images for pages',
+      title: 'Find new images for presentation',
       badgeText: ['Images'],
       attachments: 10,
       comments: 18,
@@ -86,7 +86,7 @@ export const db: KanbanType = {
     },
     {
       id: 6,
-      title: 'Complete charts & maps',
+      title: 'Complete Charts & maps',
       badgeText: ['Charts & Map'],
       attachments: 6,
       comments: 21,

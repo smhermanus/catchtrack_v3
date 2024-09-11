@@ -31,7 +31,7 @@ type FormValidateType = {
   fullName: string
   username: string
   email: string
-  role: string
+  permit: string
   plan: string
   status: string
 }
@@ -67,7 +67,7 @@ const AddUserDrawer = (props: Props) => {
       fullName: '',
       username: '',
       email: '',
-      role: '',
+      permit: '',
       plan: '',
       status: ''
     }
@@ -80,20 +80,20 @@ const AddUserDrawer = (props: Props) => {
       fullName: data.fullName,
       username: data.username,
       email: data.email,
-      role: data.role,
+      permit: data.permit,
       currentPlan: data.plan,
       status: data.status,
       company: formData.company,
       country: formData.country,
       contact: formData.contact,
-      permit: '',
+      role: '',
       statusapplications: ''
     }
 
     setData([...(userData ?? []), newUser])
     handleClose()
     setFormData(initialData)
-    resetForm({ fullName: '', username: '', email: '', role: '', plan: '', status: '' })
+    resetForm({ fullName: '', username: '', email: '', permit: '', plan: '', status: '' })
   }
 
   const handleReset = () => {
@@ -163,25 +163,27 @@ const AddUserDrawer = (props: Props) => {
             )}
           />
           <FormControl fullWidth>
-            <InputLabel id='country' error={Boolean(errors.role)}>
-              Select Role
+            <InputLabel id='country' error={Boolean(errors.permit)}>
+              Select permit
             </InputLabel>
             <Controller
-              name='role'
+              name='permit'
               control={control}
               rules={{ required: true }}
               render={({ field }) => (
-                <Select label='Select Role' {...field} error={Boolean(errors.role)}>
-                  <MenuItem value='admin'>Admin</MenuItem>
-                  <MenuItem value='skipper'>Skipper</MenuItem>
-                  <MenuItem value='monitor'>Monitor</MenuItem>
-                  <MenuItem value='driver'>Truck Driver</MenuItem>
-                  <MenuItem value='factorycontroller'>Factory Controller</MenuItem>
-                  <MenuItem value='outlet'>Outlet/Retailer</MenuItem>
+                <Select label='Select Permit' {...field} error={Boolean(errors.permit)}>
+                  <MenuItem value='permit1'>Catch IR Nearshore</MenuItem>
+                  <MenuItem value='permit2'>Catch IR Offshore</MenuItem>
+                  <MenuItem value='permit3'>Catch Nearshore</MenuItem>
+                  <MenuItem value='permit4'>Catch Offshore</MenuItem>
+                  <MenuItem value='permit5'>Vessel License</MenuItem>
+                  <MenuItem value='permit6'>Transport License</MenuItem>
+                  <MenuItem value='permit7'>Export Live</MenuItem>
+                  <MenuItem value='permit8'>Export Frozen</MenuItem>
                 </Select>
               )}
             />
-            {errors.role && <FormHelperText error>This field is required.</FormHelperText>}
+            {errors.permit && <FormHelperText error>This field is required.</FormHelperText>}
           </FormControl>
           <FormControl fullWidth>
             <InputLabel id='country' error={Boolean(errors.plan)}>

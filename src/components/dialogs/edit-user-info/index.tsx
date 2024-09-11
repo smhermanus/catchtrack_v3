@@ -48,9 +48,9 @@ const initialData: EditUserInfoProps['data'] = {
   billingEmail: 'oliverQueen@gmail.com',
   status: 'status',
   taxId: 'Tax-8894',
-  contact: '+ 1 609 933 4422',
+  contact: '+ 27 081 933 4422',
   language: ['english'],
-  country: 'US',
+  country: 'SA',
   useAsBillingAddress: true
 }
 
@@ -58,7 +58,7 @@ const status = ['Status', 'Active', 'Inactive', 'Suspended']
 
 const languages = ['English', 'Spanish', 'French', 'German', 'Hindi']
 
-const countries = ['Select Country', 'France', 'Russia', 'China', 'UK', 'US']
+const countries = ['Select Country', 'SA', 'Russia', 'China', 'UK', 'US']
 
 const EditUserInfo = ({ open, setOpen, data }: EditUserInfoProps) => {
   // States

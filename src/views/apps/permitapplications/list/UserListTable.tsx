@@ -70,7 +70,7 @@ type UsersTypeWithAction = UsersType & {
   action?: string
 }
 
-type UserRoleType = {
+type UserPermitType = {
   [key: string]: { icon: string; color: string }
 }
 
@@ -124,7 +124,7 @@ const DebouncedInput = ({
 }
 
 // Vars
-const userRoleObj: UserRoleType = {
+const userPermitObj: UserPermitType = {
   permit1: { icon: 'ri-vip-crown-line', color: 'error' },
   permit2: { icon: 'ri-computer-line', color: 'warning' },
   permit3: { icon: 'ri-edit-box-line', color: 'info' },
@@ -201,16 +201,16 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
         header: 'Email',
         cell: ({ row }) => <Typography>{row.original.email}</Typography>
       }),
-      columnHelper.accessor('role', {
-        header: 'Role',
+      columnHelper.accessor('permit', {
+        header: 'Permit',
         cell: ({ row }) => (
           <div className='flex items-center gap-2'>
             <Icon
-              className={classnames('text-[22px]', userRoleObj[row.original.role].icon)}
-              sx={{ color: `var(--mui-palette-${userRoleObj[row.original.role].color}-main)` }}
+              className={classnames('text-[22px]', userPermitObj[row.original.permit])}
+              sx={{ color: `var(--mui-palette-${userPermitObj[row.original.permit]}-main)` }}
             />
             <Typography className='capitalize' color='text.primary'>
-              {row.original.role}
+              {row.original.permit}
             </Typography>
           </div>
         )

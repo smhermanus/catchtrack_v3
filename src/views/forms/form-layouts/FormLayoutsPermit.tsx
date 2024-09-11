@@ -270,15 +270,12 @@ const FormLayoutsPermit = () => {
               <FormControl fullWidth>
                 <InputLabel>Country</InputLabel>
                 <Select
-                  label='Area of Harvesting'
+                  label='Area of Catch'
                   value={formData.country}
                   onChange={e => setFormData({ ...formData, country: e.target.value })}
                 >
                   <MenuItem value='Area8'>Area 8</MenuItem>
-                  <MenuItem value='UK'>UK</MenuItem>
-                  <MenuItem value='USA'>USA</MenuItem>
-                  <MenuItem value='Australia'>Australia</MenuItem>
-                  <MenuItem value='Germany'>Germany</MenuItem>
+                  <MenuItem value='South Africa'>UK</MenuItem>
                 </Select>
               </FormControl>
             </Grid>
@@ -292,7 +289,7 @@ const FormLayoutsPermit = () => {
                   onChange={e => setFormData({ ...formData, language: e.target.value as string[] })}
                 >
                   <MenuItem value='CatchIRNearshore'>Catch IR Nearshore</MenuItem>
-                  <MenuItem value='CatchIROffshore'>Catch IR offshore</MenuItem>
+                  <MenuItem value='CatchIROffshore'>Catch IR Offshore</MenuItem>
                   <MenuItem value='CatchNearshore'>Catch nearshore</MenuItem>
                   <MenuItem value='CatchOffshore'>Catch offshore</MenuItem>
                   <MenuItem value='VesselLicense'>Vessel license</MenuItem>
@@ -316,10 +313,9 @@ const FormLayoutsPermit = () => {
               <TextField
                 fullWidth
                 label='Name of Vessel'
-                type='number'
-                placeholder='Name of Vessel'
-                value={formData.phoneNumber}
-                onChange={e => setFormData({ ...formData, phoneNumber: e.target.value })}
+                placeholder='Name of Vessel '
+                value={formData.username}
+                onChange={e => setFormData({ ...formData, username: e.target.value })}
               />
             </Grid>
             <Grid item xs={12} sm={6}>

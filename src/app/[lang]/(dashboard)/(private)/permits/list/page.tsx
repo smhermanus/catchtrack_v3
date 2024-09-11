@@ -1,6 +1,6 @@
 // Next Imports
 // Component Imports
-import UserList from '@views/apps/user/list'
+import UserList from '@views/apps/permitapplications/list'
 
 // Data Imports
 import { getUserData } from '@/app/server/actions'

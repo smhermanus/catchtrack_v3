@@ -172,15 +172,15 @@ const ProjectTimeline = () => {
     <Card>
       <Grid container>
         <Grid item xs={12} md={8} className='max-md:border-be md:border-ie'>
-          <CardHeader title='Project Timeline' subheader='Total 840 Task Completed' />
+          <CardHeader title='Tasks Timeline' subheader='Total 840 Task Completed' />
           <CardContent>
             <AppReactApexCharts height={224} width='100%' type='rangeBar' series={series} options={options} />
           </CardContent>
         </Grid>
         <Grid item xs={12} md={4}>
           <CardHeader
-            title='Project List'
-            subheader='3 Ongoing Projects'
+            title='Tasks List'
+            subheader='3 Ongoing Tasks'
             action={<OptionMenu options={['Refresh', 'Update', 'Share']} />}
           />
           <CardContent className='flex flex-col gap-6 pbs-5'>

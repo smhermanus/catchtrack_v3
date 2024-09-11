@@ -102,8 +102,8 @@ export const db: DB = {
       projectTable: [
         {
           id: 1,
-          title: 'BGC eCommerce App',
-          subtitle: 'React Project',
+          title: 'Register New Permits',
+          subtitle: 'Permit Applications',
           leader: 'Eileen',
           avatar: '/images/logos/react-bg.png',
           avatarGroup: [
@@ -117,8 +117,8 @@ export const db: DB = {
         {
           id: 2,
           leader: 'Owen',
-          title: 'Falcon Logo Design',
-          subtitle: 'Figma Project',
+          title: 'Task 2',
+          subtitle: 'Project 1',
           avatar: '/images/logos/figma-bg.png',
           avatarGroup: ['/images/avatars/5.png', '/images/avatars/6.png'],
           status: 18

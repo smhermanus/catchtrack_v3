@@ -130,10 +130,13 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
               {dictionary['navigation'].logshipment}
             </MenuItem>
           </SubMenu>
-          <MenuItem href={`/${locale}/forms/form-validation`} icon={<i className='ri-checkbox-multiple-line' />}>
+          <MenuItem
+            href={`/${locale}/submissions/permitholder/view`}
+            icon={<i className='ri-checkbox-multiple-line' />}
+          >
             {dictionary['navigation'].permitholders}
           </MenuItem>
-          <MenuItem href={`/${locale}/forms/form-validation`} icon={<i className='ri-checkbox-multiple-line' />}>
+          <MenuItem href={`/${locale}/users/view`} icon={<i className='ri-checkbox-multiple-line' />}>
             {dictionary['navigation'].administrator}
           </MenuItem>
         </MenuSection>
@@ -173,7 +176,17 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
           </SubMenu>
         </MenuSection>
 
-        <MenuSection label={dictionary['navigation'].systemsadmin}>
+        <MenuSection label={dictionary['navigation'].settings} icon={<i className='ri-home-smile-line' />}>
+          <MenuItem href={`/${locale}/pages/account-settings`}>{dictionary['navigation'].generalsettings}</MenuItem>
+          <MenuItem href={`/${locale}/apps/catchtrack/settings`}>{dictionary['navigation'].adminsettings}</MenuItem>
+          <MenuItem href={`/${locale}/apps/roles`}>{dictionary['navigation'].roles}</MenuItem>
+          <MenuItem href={`/${locale}/apps/permissions`}>{dictionary['navigation'].permissions}</MenuItem>
+          <MenuItem href={`/${locale}/apps/ecommerce/settings`}>{dictionary['navigation'].factorysettings}</MenuItem>
+          <MenuItem href={`/${locale}/dashboards/logistics`}>{dictionary['navigation'].supporttickets}</MenuItem>
+          <MenuItem href={`/${locale}/settings/reports`}>{dictionary['navigation'].reports}</MenuItem>
+        </MenuSection>
+
+        {/* <MenuSection label={dictionary['navigation'].systemsadmin}>
           <SubMenu label={dictionary['navigation'].admin} icon={<i className='ri-home-smile-line' />}>
             <MenuItem href={`/${locale}/dashboards/crm`}>{dictionary['navigation'].permittypes}</MenuItem>
             <MenuItem href={`/${locale}/dashboards/analytics`}>{dictionary['navigation'].products}</MenuItem>
@@ -186,17 +199,8 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
             <MenuItem href={`/${locale}/dashboards/logistics`}>{dictionary['navigation'].sectorowner}</MenuItem>
             <MenuItem href={`/${locale}/dashboards/logistics`}>{dictionary['navigation'].vessels}</MenuItem>
           </SubMenu>
-
-          <SubMenu label={dictionary['navigation'].settings} icon={<i className='ri-home-smile-line' />}>
-            <MenuItem href={`/${locale}/dashboards/crm`}>{dictionary['navigation'].generalsettings}</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/analytics`}>{dictionary['navigation'].roles}</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/ecommerce`}>{dictionary['navigation'].permissions}</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/academy`}>{dictionary['navigation'].factorysettings}</MenuItem>
-            <MenuItem href={`/${locale}/dashboards/logistics`}>{dictionary['navigation'].supporttickets}</MenuItem>
-            <MenuItem href={`/${locale}/settings/reports`}>{dictionary['navigation'].reports}</MenuItem>
-          </SubMenu>
         </MenuSection>
-        {/* 
+
         <MenuSection label={dictionary['navigation'].appsPages}>
           <SubMenu
             label={dictionary['navigation'].dashboards}
