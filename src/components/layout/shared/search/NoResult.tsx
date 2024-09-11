@@ -29,6 +29,11 @@ const noResultData: NoResultData[] = [
     icon: 'ri-user-3-line'
   },
   {
+    label: 'CatchTrack',
+    href: '/dashboards/catchtrack',
+    icon: 'ri-pie-chart-2-line'
+  },
+  {
     label: 'CRM',
     href: '/dashboards/crm',
     icon: 'ri-pie-chart-2-line'

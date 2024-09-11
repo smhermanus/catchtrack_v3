@@ -11,8 +11,8 @@ type SearchData = {
 const data: SearchData[] = [
   {
     id: '1',
-    name: 'CRM',
-    url: '/dashboards/crm',
+    name: 'CatchTrack',
+    url: '/dashboards/catchtrack',
     icon: 'ri-pie-chart-2-line',
     section: 'Dashboards'
   },

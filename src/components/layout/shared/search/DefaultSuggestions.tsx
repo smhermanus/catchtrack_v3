@@ -30,6 +30,11 @@ const defaultSuggestions: DefaultSuggestionsType[] = [
         icon: 'ri-bar-chart-line'
       },
       {
+        label: 'Catchtrack',
+        href: '/dashboards/catchtrack',
+        icon: 'ri-pie-chart-2-line'
+      },
+      {
         label: 'CRM',
         href: '/dashboards/crm',
         icon: 'ri-pie-chart-2-line'

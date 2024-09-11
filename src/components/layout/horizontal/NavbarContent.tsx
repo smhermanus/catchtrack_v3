@@ -54,6 +54,12 @@ const shortcuts: ShortcutsType[] = [
     subtitle: 'Permissions'
   },
   {
+    url: '/dashboards/catchtrack',
+    icon: 'ri-pie-chart-2-line',
+    title: 'Dashboard',
+    subtitle: 'User Dashboard'
+  },
+  {
     url: '/dashboards/crm',
     icon: 'ri-pie-chart-2-line',
     title: 'Dashboard',
