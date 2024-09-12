@@ -147,9 +147,15 @@ const userStatusObj: UserStatusType = {
 }
 
 const userStatusApplicationObj: UserStatusApplicationType = {
+  // new: 'success',
+  // pending: 'warning',
+  // denied: 'secondary'
+
   new: 'success',
-  pending: 'warning',
-  denied: 'secondary'
+  pending: 'primary',
+  approved: 'success',
+  denied: 'warning',
+  renewed: 'secondary'
 }
 
 // Column Definitions
@@ -377,12 +383,14 @@ const PermitTable = ({ tableData }: { tableData?: UsersType[] }) => {
               className='min-is-[150px]'
             >
               <MenuItem value=''>Select Permit</MenuItem>
-              <MenuItem value='admin'>Permit 1</MenuItem>
-              <MenuItem value='skipper'>Permit 2</MenuItem>
-              <MenuItem value='monitor'>Permit 3</MenuItem>
-              <MenuItem value='driver'>Permit 4</MenuItem>
-              <MenuItem value='factorycontroller'>Permit 5</MenuItem>
-              <MenuItem value='outlet'>Permit 6</MenuItem>
+              <MenuItem value='permit1'>Catch IR Nearshore</MenuItem>
+              <MenuItem value='permit2'>Catch IR Offshore</MenuItem>
+              <MenuItem value='permit3'>Catch Nearshore</MenuItem>
+              <MenuItem value='permit4'>Catch Offshore</MenuItem>
+              <MenuItem value='permit5'>Vessel License</MenuItem>
+              <MenuItem value='permit6'>Transport License</MenuItem>
+              <MenuItem value='permit7'>Export Live</MenuItem>
+              <MenuItem value='permit8'>Export Frozen</MenuItem>
             </Select>
           </FormControl>
         </div>

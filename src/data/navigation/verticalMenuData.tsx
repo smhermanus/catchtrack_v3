@@ -577,14 +577,14 @@ const verticalMenuData = (dictionary: Awaited<ReturnType<typeof getDictionary>>)
       {
         label: dictionary['navigation'].raiseSupport,
         icon: 'ri-lifebuoy-line',
-        href: 'https://assetflow.ticksy.com',
+        href: 'https://smarttechnologies.co.za',
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].documentation,
         icon: 'ri-book-line',
-        href: 'https://demos.assetflow.co.za/materialize-nextjs-admin-template/documentation',
+        href: 'https://smarttechnologies.co.za',
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
@@ -601,7 +601,7 @@ const verticalMenuData = (dictionary: Awaited<ReturnType<typeof getDictionary>>)
           },
           {
             label: dictionary['navigation'].externalLink,
-            href: 'https://assetflow.co.za',
+            href: 'https://smarttechnologies.co.za',
             target: '_blank',
             suffix: <i className='ri-external-link-line text-xl' />
           },

@@ -13,7 +13,7 @@ const data: UserDataType[] = [
     title: 'New Applications',
     stats: '9',
     avatarIcon: 'ri-group-line',
-    avatarColor: 'primary',
+    avatarColor: 'success',
     trend: 'positive',
     trendNumber: '6%',
     subtitle: 'Within Last week'
@@ -22,7 +22,7 @@ const data: UserDataType[] = [
     title: 'Pending Applications',
     stats: '5',
     avatarIcon: 'ri-user-add-line',
-    avatarColor: 'error',
+    avatarColor: 'primary',
     trend: 'positive',
     trendNumber: '5%',
     subtitle: 'Within Last week'

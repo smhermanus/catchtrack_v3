@@ -73,9 +73,9 @@ const UserActivityTimeLine = () => {
                 <CustomAvatarAvatar src='/images/avatars/2.png' size={32} />
                 <div className='flex flex-col flex-wrap'>
                   <Typography variant='body2' className='font-medium'>
-                    Lester McCarthy (Client)
+                    Nazmie Daniels (Client)
                   </Typography>
-                  <Typography variant='body2'>CEO of Assetflow</Typography>
+                  <Typography variant='body2'>CEO of Smart Technologies Consulting (Pty) Ltd</Typography>
                 </div>
               </div>
             </TimelineContent>

@@ -134,7 +134,7 @@ const userRoleObj: UserRoleType = {
   skipper: { icon: 'ri-computer-line', color: 'warning' },
   monitor: { icon: 'ri-edit-box-line', color: 'info' },
   driver: { icon: 'ri-pie-chart-2-line', color: 'success' },
-  factorcontroller: { icon: 'ri-user-3-line', color: 'primary' },
+  factorycontroller: { icon: 'ri-user-3-line', color: 'primary' },
   outlet: { icon: 'ri-user-3-line', color: 'secondary' }
 }
 

@@ -35,27 +35,27 @@ type Data = {
 
 // Vars
 const initialData: Data = {
-  firstName: 'John',
-  lastName: 'Doe',
-  email: 'john.doe@example.com',
-  organization: 'Assetflow',
-  phoneNumber: '+27 (917) 543-9876',
-  address: '123 Main St, New York, NY 10001',
+  firstName: 'Nazmie',
+  lastName: 'Daniels',
+  email: 'nazmie@smarttechnologies.co.za',
+  organization: 'Smart Technologies Consulting (Pty) LTd',
+  phoneNumber: '+27 (083) 700-6200',
+  address: 'Claremont',
   state: 'Cape Town',
-  zipCode: '634880',
+  zipCode: '7708',
   country: 'zar',
   language: 'English',
   timezone: 'gmt-12',
   currency: 'zar'
 }
 
-const languageData = ['English', 'Arabic', 'French', 'German', 'Portuguese']
+const languageData = ['English', 'Afrikaans', 'Xhosa', 'Zulu', 'Sotho']
 
 const AccountDetails = () => {
   // States
   const [formData, setFormData] = useState<Data>(initialData)
   const [fileInput, setFileInput] = useState<string>('')
-  const [imgSrc, setImgSrc] = useState<string>('/images/avatars/1.png')
+  const [imgSrc, setImgSrc] = useState<string>('/images/avatars/nazmie.png')
   const [language, setLanguage] = useState<string[]>(['English'])
 
   const handleDelete = (value: string) => {
@@ -86,7 +86,7 @@ const AccountDetails = () => {
 
   const handleFileInputReset = () => {
     setFileInput('')
-    setImgSrc('/images/avatars/1.png')
+    setImgSrc('/images/avatars/nazmie.png')
   }
 
   return (
@@ -150,7 +150,7 @@ const AccountDetails = () => {
                 fullWidth
                 label='Organization'
                 value={formData.organization}
-                placeholder='Assetflow'
+                placeholder='Smart Technologies Consulting (Pty) Ltd.'
                 onChange={e => handleFormChange('organization', e.target.value)}
               />
             </Grid>
@@ -253,7 +253,7 @@ const AccountDetails = () => {
                   <MenuItem value='gmt-10'>(GMT-10:00) Hawaii</MenuItem>
                   <MenuItem value='gmt-09'>(GMT-09:00) Alaska</MenuItem>
                   <MenuItem value='gmt-08'>(GMT-08:00) Pacific Time (US & Canada)</MenuItem>
-                  <MenuItem value='gmt-08-baja'>(GMT-08:00) Tijuana, Baja California</MenuItem>
+                  <MenuItem value='gmt-08-baja'>(GMT-08:00) Tijuana, Baja Western Cape</MenuItem>
                   <MenuItem value='gmt-07'>(GMT-07:00) Chihuahua, La Paz, Mazatlan</MenuItem>
                   <MenuItem value='gmt-07-mt'>(GMT-07:00) Mountain Time (US & Canada)</MenuItem>
                   <MenuItem value='gmt-06'>(GMT-06:00) Central America</MenuItem>

@@ -27,10 +27,20 @@ const Address = () => {
         <form>
           <Grid container spacing={5}>
             <Grid item xs={12} sm={6}>
-              <TextField fullWidth label='Company Name' variant='outlined' placeholder='Assetflow' />
+              <TextField
+                fullWidth
+                label='Company Name'
+                variant='outlined'
+                placeholder='Smart Technologies Consulting (Pty) Ltd.'
+              />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField fullWidth label='Billing Email' variant='outlined' placeholder='john.doe@example.com' />
+              <TextField
+                fullWidth
+                label='Billing Email'
+                variant='outlined'
+                placeholder='nazmie@smarttechnologies.co.za'
+              />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField fullWidth label='TAX ID' variant='outlined' placeholder='Enter TAX ID' />
@@ -43,7 +53,7 @@ const Address = () => {
                 fullWidth
                 type='number'
                 label='Mobile Number'
-                placeholder='202 555 0111'
+                placeholder='083 700 6200'
                 InputProps={{
                   startAdornment: <InputAdornment position='start'>US (+1)</InputAdornment>
                 }}
@@ -54,6 +64,7 @@ const Address = () => {
                 <InputLabel>Country</InputLabel>
                 <Select label='Country' value={state} onChange={e => setState(e.target.value)}>
                   <MenuItem value=''>Select Country</MenuItem>
+                  <MenuItem value='south-africa'>South Africa</MenuItem>
                   <MenuItem value='australia'>Australia</MenuItem>
                   <MenuItem value='canada'>Canada</MenuItem>
                   <MenuItem value='france'>France</MenuItem>
@@ -66,7 +77,7 @@ const Address = () => {
               <TextField fullWidth label='Billing Address' variant='outlined' placeholder='Billing Address' />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField fullWidth label='State' variant='outlined' placeholder='California' />
+              <TextField fullWidth label='State' variant='outlined' placeholder='Western Cape' />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField fullWidth type='number' label='Zip Code' variant='outlined' placeholder='231465' />

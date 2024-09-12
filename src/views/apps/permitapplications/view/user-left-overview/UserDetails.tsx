@@ -47,7 +47,7 @@ const UserDetails = () => {
             <div className='flex flex-col items-center justify-center gap-4'>
               <CustomAvatar
                 alt='user-profile'
-                src='/images/avatars/1.png'
+                src='/images/avatars/nazmie.png'
                 variant='rounded'
                 className='rounded-lg'
                 size={120}

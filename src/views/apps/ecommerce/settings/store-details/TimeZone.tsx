@@ -38,7 +38,7 @@ const TimeZone = () => {
                 <MenuItem value='International Date Line West'>(UTC-12:00) International Date Line West</MenuItem>
                 <MenuItem value='Coordinated Universal Time-11'>(UTC-11:00) Coordinated Universal Time-11</MenuItem>
                 <MenuItem value='Alaska'>(UTC-09:00) Alaska</MenuItem>
-                <MenuItem value='Baja California'>(UTC-08:00) Baja California</MenuItem>
+                <MenuItem value='Baja Western Cape'>(UTC-08:00) Baja Western Cape</MenuItem>
               </Select>
             </FormControl>
           </Grid>

@@ -23,11 +23,11 @@ import { getUserData } from '@/app/server/actions'
   return res.json()
 } */
 
-const UserListApp = async () => {
+const UserPermitApp = async () => {
   // Vars
   const data = await getUserData()
 
   return <UserList userData={data} />
 }
 
-export default UserListApp
+export default UserPermitApp

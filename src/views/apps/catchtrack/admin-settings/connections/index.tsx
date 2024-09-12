@@ -70,16 +70,16 @@ const socialAccountsArr: SocialAccountsType[] = [
   {
     title: 'Twitter',
     isConnected: true,
-    username: '@Assetflow',
+    username: '@smarttechnologies',
     logo: '/images/logos/twitter.png',
-    href: 'https://twitter.com/assetflows'
+    href: 'https://twitter.com/'
   },
   {
     title: 'Linkedin',
     isConnected: true,
-    username: '@Assetflow',
+    username: '@smarttechnologies',
     logo: '/images/logos/linkedin.png',
-    href: 'https://www.linkedin.com/in/assetflow-creative-studio-561a4713b'
+    href: 'https://www.linkedin.com/in/'
   },
   {
     title: 'Dribbble',

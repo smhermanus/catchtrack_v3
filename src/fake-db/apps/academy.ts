@@ -5,7 +5,7 @@ export const db: AcademyType = {
   courses: [
     {
       id: 1,
-      user: 'Lauretta Coie',
+      user: 'John Cole',
       image: '/images/avatars/1.png',
       tutorImg: '/images/apps/academy/1.png',
       completedTasks: 19,

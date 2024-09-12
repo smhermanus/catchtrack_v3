@@ -17,6 +17,6 @@ export const users: UserTable[] = [
     name: 'Nazmie Daniels',
     password: 'admin',
     email: 'nazmie@catchtrack.co.za',
-    image: '/images/avatars/1.png'
+    image: '/images/avatars/nazmie.png'
   }
 ]

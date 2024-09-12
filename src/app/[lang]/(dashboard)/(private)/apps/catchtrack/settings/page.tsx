@@ -5,9 +5,9 @@ import type { ReactElement } from 'react'
 import dynamic from 'next/dynamic'
 
 // Component Imports
-import AdminSettings from '@views/pages/account-settings'
+import AdminSettings from '@views/pages/admin-settings'
 
-const PermitTab = dynamic(() => import('@views/apps/catchtrack/admin-settings/account'))
+const PermitTab = dynamic(() => import('@views/pages/admin-settings/factories'))
 const SecurityTab = dynamic(() => import('@views/apps/catchtrack/admin-settings/security'))
 const BillingPlansTab = dynamic(() => import('@views/apps/catchtrack/admin-settings/billing-plans'))
 const NotificationsTab = dynamic(() => import('@views/apps/catchtrack/admin-settings/notifications'))

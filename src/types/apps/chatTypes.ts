@@ -8,6 +8,7 @@ export type StatusObjType = Record<StatusType, ThemeColor>
 export type ProfileUserType = {
   id: number
   role: string
+  permit: string
   about: string
   avatar: string
   fullName: string
@@ -22,6 +23,7 @@ export type ContactType = {
   id: number
   fullName: string
   role: string
+  permit: string
   about: string
   avatar?: string
   avatarColor?: ThemeColor

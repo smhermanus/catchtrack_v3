@@ -157,21 +157,21 @@ const Footer = () => {
             <span>{`© ${new Date().getFullYear()}, Made with `}</span>
             <span>{`❤️`}</span>
             <span>{` by `}</span>
-            <Link href='https://assetflow.co.za/' target='_blank' className='font-medium text-white'>
-              Assetflow
+            <Link href='https://smarttechnologies.co.za' target='_blank' className='font-medium text-white'>
+              Smart Technologies Consulting (Pty) Ltd.
             </Link>
           </Typography>
           <div className='flex gap-1.5 items-center opacity-[0.78]'>
-            <IconButton component={Link} size='small' href='https://github.com/assetflow' target='_blank'>
+            <IconButton component={Link} size='small' href='https://github.com' target='_blank'>
               <i className='ri-github-fill text-white text-lg' />
             </IconButton>
-            <IconButton component={Link} size='small' href='https://www.facebook.com/assetflow/' target='_blank'>
+            <IconButton component={Link} size='small' href='https://www.facebook.com' target='_blank'>
               <i className='ri-facebook-fill text-white text-lg' />
             </IconButton>
-            <IconButton component={Link} size='small' href='https://twitter.com/assetflow' target='_blank'>
+            <IconButton component={Link} size='small' href='https://twitter.com' target='_blank'>
               <i className='ri-twitter-fill text-white text-lg' />
             </IconButton>
-            <IconButton component={Link} size='small' href='https://www.linkedin.com/company/assetflow' target='_blank'>
+            <IconButton component={Link} size='small' href='https://www.linkedin.com/company' target='_blank'>
               <i className='ri-linkedin-fill text-white text-lg' />
             </IconButton>
           </div>

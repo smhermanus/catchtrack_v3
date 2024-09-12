@@ -1,5 +1,13 @@
 {
   "navigation": {
+    "permit1": "Catch IR Nearshore",
+    "permit2": "Catch IR Offshore",
+    "permit3": "Catch Nearshore",
+    "permit4": "Catch Offshore",
+    "permit5": "Vessel License",
+    "permit6": "Transport License",
+    "permit7": "Export Live",
+    "permit8": "Export Frozen",
     "home": "Home (Dashboard)",
     "skippers": "Skipper",
     "monitors": "Monitor/Inspector",

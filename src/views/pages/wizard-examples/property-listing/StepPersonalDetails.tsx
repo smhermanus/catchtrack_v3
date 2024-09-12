@@ -136,7 +136,7 @@ const StepPersonalDetails = ({ activeStep, handleNext, handlePrev, steps }: Prop
             <TextField
               fullWidth
               label='Contact'
-              placeholder='202 555 0111'
+              placeholder='083 700 6200'
               InputProps={{
                 startAdornment: <InputAdornment position='start'>US (+1)</InputAdornment>
               }}

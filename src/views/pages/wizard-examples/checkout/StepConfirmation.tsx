@@ -41,8 +41,8 @@ const StepConfirmation = () => {
           </Typography>
           <div>
             <Typography>
-              We sent an email to <span className='font-medium text-textPrimary'>john.doe@example.com</span> with your
-              order confirmation and receipt.
+              We sent an email to <span className='font-medium text-textPrimary'>nazmie@smarttechnologies.co.za</span>{' '}
+              with your order confirmation and receipt.
             </Typography>
             <Typography>
               If the email hasn&#39;t arrived within two minutes, please check your spam folder to see if the email was

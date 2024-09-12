@@ -71,12 +71,12 @@ const ActivityTimeline = () => {
               </div>
               <Typography className='mbe-2'>Project meeting with john @10:15am</Typography>
               <div className='flex items-center gap-2.5'>
-                <CustomAvatar src='/images/avatars/1.png' size={32} />
+                <CustomAvatar src='/images/avatars/nazmie.png' size={32} />
                 <div>
                   <Typography variant='body2' className='font-medium'>
-                    Lester McCarthy (Client)
+                    Nazmie Daniels (Client)
                   </Typography>
-                  <Typography variant='body2'>CEO of Assetflow</Typography>
+                  <Typography variant='body2'>CEO of Smart Technologies Consulting (Pty) Ltd</Typography>
                 </div>
               </div>
             </TimelineContent>

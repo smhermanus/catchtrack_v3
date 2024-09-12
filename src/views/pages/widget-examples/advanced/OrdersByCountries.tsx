@@ -57,21 +57,21 @@ const data: Data = {
     {
       sender: {
         name: 'Micheal Hughes',
-        address: '101 Boulder, California (CA), 933130'
+        address: '101 Boulder, Western Cape (CA), 933130'
       },
       receiver: {
         name: 'Daisy Coleman',
-        address: '939 Orange, California (CA), 910614'
+        address: '939 Orange, Western Cape (CA), 910614'
       }
     },
     {
       sender: {
         name: 'Glenn Todd',
-        address: '1713 Garnet, California (CA), 939573'
+        address: '1713 Garnet, Western Cape (CA), 939573'
       },
       receiver: {
         name: 'Arthur West',
-        address: '156 Blaze, California (CA), 925878'
+        address: '156 Blaze, Western Cape (CA), 925878'
       }
     }
   ],
@@ -79,21 +79,21 @@ const data: Data = {
     {
       sender: {
         name: 'Rose Cole',
-        address: '61 Unions, California (CA), 922523'
+        address: '61 Unions, Western Cape (CA), 922523'
       },
       receiver: {
         name: 'Polly Spencer',
-        address: '865 Delta, California (CA), 932830'
+        address: '865 Delta, Western Cape (CA), 932830'
       }
     },
     {
       sender: {
         name: 'Jerry Wood',
-        address: '37 Marjory, California (CA), 951958'
+        address: '37 Marjory, Western Cape (CA), 951958'
       },
       receiver: {
         name: 'Sam McCormick',
-        address: '926 Reynolds, California (CA), 910279'
+        address: '926 Reynolds, Western Cape (CA), 910279'
       }
     }
   ],
@@ -101,21 +101,21 @@ const data: Data = {
     {
       sender: {
         name: 'Alex Walton',
-        address: '78 Judson, California (CA), 956084'
+        address: '78 Judson, Western Cape (CA), 956084'
       },
       receiver: {
         name: 'Eula Griffin',
-        address: '56 Bernard, California (CA), 965133'
+        address: '56 Bernard, Western Cape (CA), 965133'
       }
     },
     {
       sender: {
         name: 'Lula Barton',
-        address: '95 Gaylord, California (CA), 991955'
+        address: '95 Gaylord, Western Cape (CA), 991955'
       },
       receiver: {
         name: 'Craig Jacobs',
-        address: '73 Sandy, California (CA), 954566'
+        address: '73 Sandy, Western Cape (CA), 954566'
       }
     }
   ]

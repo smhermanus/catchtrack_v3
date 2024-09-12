@@ -144,7 +144,7 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps }: Prop
             <TextField fullWidth label='City' placeholder='Los Angeles' />
           </Grid>
           <Grid item xs={12} md={6}>
-            <TextField fullWidth label='State' placeholder='California' />
+            <TextField fullWidth label='State' placeholder='Western Cape' />
           </Grid>
           <Grid item xs={12}>
             <TextField fullWidth multiline minRows={2} label='Address' placeholder='12, Business Park' />

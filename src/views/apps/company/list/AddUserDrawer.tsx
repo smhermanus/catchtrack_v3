@@ -32,6 +32,7 @@ type FormValidateType = {
   username: string
   email: string
   role: string
+  permit: string
   plan: string
   status: string
 }

@@ -56,7 +56,7 @@ const StepPersonalInfo = ({ handleNext, handlePrev }: { handleNext: () => void; 
             <InputLabel>State</InputLabel>
             <Select label='State' defaultValue='new-york'>
               <MenuItem value='new-york'>New York</MenuItem>
-              <MenuItem value='california'>California</MenuItem>
+              <MenuItem value='Western Cape'>Western Cape</MenuItem>
               <MenuItem value='texas'>Texas</MenuItem>
               <MenuItem value='florida'>Florida</MenuItem>
               <MenuItem value='washington'>Washington</MenuItem>

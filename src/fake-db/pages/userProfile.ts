@@ -10,16 +10,16 @@ export const db: DB = {
   users: {
     profile: {
       about: [
-        { property: 'Full Name', value: 'John Doe', icon: 'ri-user-3-line' },
+        { property: 'Full Name', value: 'Nazmie Daniels', icon: 'ri-user-3-line' },
         { property: 'Status', value: 'active', icon: 'ri-check-line' },
-        { property: 'Role', value: 'Developer', icon: 'ri-star-smile-line' },
-        { property: 'Country', value: 'USA', icon: 'ri-flag-line' },
+        { property: 'Role', value: 'admin', icon: 'ri-star-smile-line' },
+        { property: 'Country', value: 'South Africa', icon: 'ri-flag-line' },
         { property: 'Language', value: 'English', icon: 'ri-translate-2' }
       ],
       contacts: [
         { property: 'Contact', value: '(123) 456-7890', icon: 'ri-phone-line' },
         { property: 'Skype', value: 'john.doe', icon: 'ri-wechat-line' },
-        { property: 'Email', value: 'john.doe@example.com', icon: 'ri-mail-open-line' }
+        { property: 'Email', value: 'nazmie@smarttechnologies.co.za', icon: 'ri-mail-open-line' }
       ],
       teams: [
         { property: 'Backend Developer', value: '(126 Members)' },

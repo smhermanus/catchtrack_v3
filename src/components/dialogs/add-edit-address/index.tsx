@@ -244,7 +244,7 @@ const AddEditAddress = ({ open, setOpen, data }: AddEditAddressProps) => {
                 label='State'
                 name='state'
                 variant='outlined'
-                placeholder='California'
+                placeholder='Western Cape'
                 value={addressData?.state}
                 onChange={e => setAddressData({ ...addressData, state: e.target.value })}
               />

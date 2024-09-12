@@ -477,7 +477,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
             {dictionary['navigation'].menuExamples}
           </MenuItem>
           <MenuItem
-            href='https://assetflow.ticksy.com'
+            href='https://smarttechnologies.co.za/'
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-lifebuoy-line' />}
@@ -485,7 +485,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
             {dictionary['navigation'].raiseSupport}
           </MenuItem>
           <MenuItem
-            href='https://demos.assetflow.co.za/materialize-nextjs-admin-template/documentation'
+            href='https://smarttechnologies.co.za'
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-book-line' />}
@@ -497,7 +497,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
               {dictionary['navigation'].itemWithBadge}
             </MenuItem>
             <MenuItem
-              href='https://assetflow.co.za'
+              href='https://smarttechnologies.co.za'
               target='_blank'
               suffix={<i className='ri-external-link-line text-xl' />}
             >

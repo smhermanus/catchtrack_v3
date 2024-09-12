@@ -130,15 +130,21 @@ const userPermitObj: UserPermitType = {
   permit3: { icon: 'ri-edit-box-line', color: 'info' },
   permit4: { icon: 'ri-pie-chart-2-line', color: 'success' },
   permit5: { icon: 'ri-user-3-line', color: 'primary' },
-  permit6: { icon: 'ri-user-3-line', color: 'secondary' },
+  permit6: { icon: 'ri-vip-crown-line', color: 'secondary' },
   permit7: { icon: 'ri-user-3-line', color: 'primary' },
-  permit8: { icon: 'ri-user-3-line', color: 'secondary' }
+  permit8: { icon: 'ri-vip-crown-line', color: 'secondary' }
 }
 
 const userStatusObj: UserStatusType = {
-  active: 'success',
-  pending: 'warning',
-  inactive: 'secondary'
+  new: 'success',
+  pending: 'primary',
+  approved: 'success',
+  denied: 'warning',
+  renewed: 'error'
+
+  // active: 'success',
+  // pending: 'warning',
+  // inactive: 'secondary'
 }
 
 // Column Definitions
@@ -206,8 +212,8 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
         cell: ({ row }) => (
           <div className='flex items-center gap-2'>
             <Icon
-              className={classnames('text-[22px]', userPermitObj[row.original.permit])}
-              sx={{ color: `var(--mui-palette-${userPermitObj[row.original.permit]}-main)` }}
+              className={classnames('text-[22px]', userPermitObj[row.original.permit].icon)}
+              sx={{ color: `var(--mui-palette-${userPermitObj[row.original.permit].color}-main)` }}
             />
             <Typography className='capitalize' color='text.primary'>
               {row.original.permit}
@@ -224,14 +230,14 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
         )
       }),
       columnHelper.accessor('status', {
-        header: 'Application Status',
+        header: 'Status',
         cell: ({ row }) => (
           <div className='flex items-center gap-3'>
             <Chip
               variant='tonal'
-              label={row.original.statusapplications}
+              label={row.original.status}
               size='small'
-              color={userStatusObj[row.original.statusapplications]}
+              color={userStatusObj[row.original.status]}
               className='capitalize'
             />
           </div>
