@@ -121,9 +121,9 @@ const StepConfirmation = () => {
                   {product.inStock && <Chip variant='tonal' size='small' color='success' label='In Stock' />}
                 </div>
                 <div className='flex items-center'>
-                  <Typography color='primary'>{`$${product.price}/`}</Typography>
+                  <Typography color='primary'>{`R${product.price}/`}</Typography>
                   <Typography color='text.disabled' className='line-through'>
-                    {`$${product.originalPrice}`}
+                    {`R${product.originalPrice}`}
                   </Typography>
                 </div>
               </div>

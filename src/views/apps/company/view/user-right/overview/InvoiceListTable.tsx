@@ -153,7 +153,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData?: InvoiceType[] }) => {
       }),
       columnHelper.accessor('total', {
         header: 'Total',
-        cell: ({ row }) => <Typography>{`$${row.original.total}`}</Typography>
+        cell: ({ row }) => <Typography>{`R${row.original.total}`}</Typography>
       }),
       columnHelper.accessor('issuedDate', {
         header: 'Issued Date',

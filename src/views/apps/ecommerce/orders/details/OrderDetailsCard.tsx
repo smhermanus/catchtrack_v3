@@ -140,7 +140,7 @@ const OrderTable = () => {
       }),
       columnHelper.accessor('price', {
         header: 'Price',
-        cell: ({ row }) => <Typography>{`$${row.original.price}`}</Typography>
+        cell: ({ row }) => <Typography>{`R${row.original.price}`}</Typography>
       }),
       columnHelper.accessor('quantity', {
         header: 'Qty',
@@ -148,7 +148,7 @@ const OrderTable = () => {
       }),
       columnHelper.accessor('total', {
         header: 'Total',
-        cell: ({ row }) => <Typography>{`$${row.original.total}`}</Typography>
+        cell: ({ row }) => <Typography>{`R${row.original.total}`}</Typography>
       })
     ],
     // eslint-disable-next-line react-hooks/exhaustive-deps

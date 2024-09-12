@@ -130,8 +130,8 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                 </div>
                 <div className='flex flex-col justify-between items-center gap-4 sm:items-end'>
                   <div className='flex'>
-                    <Typography color='primary'>{`$${product.price}/`}</Typography>
-                    <Typography className='line-through'>{`$${product.originalPrice}`}</Typography>
+                    <Typography color='primary'>{`R${product.price}/`}</Typography>
+                    <Typography className='line-through'>{`R${product.originalPrice}`}</Typography>
                   </div>
                   <Button variant='outlined' size='small'>
                     Move to wishlist

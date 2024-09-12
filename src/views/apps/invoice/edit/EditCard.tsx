@@ -64,8 +64,8 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData?: InvoiceType; id: st
                     </div>
                     <div>
                       <Typography color='text.primary'>Office 149, 450 South Brand Brooklyn</Typography>
-                      <Typography color='text.primary'>San Diego County, CA 91905, USA</Typography>
-                      <Typography color='text.primary'>+1 (123) 456 7891, +44 (876) 543 2198</Typography>
+                      <Typography color='text.primary'>Cape Town, WC 7708, SA</Typography>
+                      <Typography color='text.primary'>+27 (021) 456 7891, +27 (021) 543 2198</Typography>
                     </div>
                   </div>
                   <div className='flex flex-col gap-2'>
@@ -146,15 +146,15 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData?: InvoiceType; id: st
                   <div>
                     <div className='flex items-center gap-4'>
                       <Typography className='min-is-[100px]'>Total Due:</Typography>
-                      <Typography>$12,110.55</Typography>
+                      <Typography>R12,110.55</Typography>
                     </div>
                     <div className='flex items-center gap-4'>
                       <Typography className='min-is-[100px]'>Bank name:</Typography>
-                      <Typography>American Bank</Typography>
+                      <Typography>Nedbank</Typography>
                     </div>
                     <div className='flex items-center gap-4'>
                       <Typography className='min-is-[100px]'>Country:</Typography>
-                      <Typography>United States</Typography>
+                      <Typography>South Africa</Typography>
                     </div>
                     <div className='flex items-center gap-4'>
                       <Typography className='min-is-[100px]'>IBAN:</Typography>
@@ -244,7 +244,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData?: InvoiceType; id: st
                       <Typography className='font-medium md:absolute md:-top-[38px]' color='text.primary'>
                         Price
                       </Typography>
-                      <Typography color='text.primary'>$24.00</Typography>
+                      <Typography color='text.primary'>R24.00</Typography>
                     </Grid>
                   </Grid>
                   <div className='flex flex-col justify-start border-is'>
@@ -283,26 +283,26 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData?: InvoiceType; id: st
                   <div className='flex items-center justify-between'>
                     <Typography>Subtotal:</Typography>
                     <Typography className='font-medium' color='text.primary'>
-                      $1800
+                      R1800
                     </Typography>
                   </div>
                   <div className='flex items-center justify-between'>
                     <Typography>Discount:</Typography>
                     <Typography className='font-medium' color='text.primary'>
-                      $28
+                      R28
                     </Typography>
                   </div>
                   <div className='flex items-center justify-between'>
                     <Typography>Tax:</Typography>
                     <Typography className='font-medium' color='text.primary'>
-                      21%
+                      15%
                     </Typography>
                   </div>
                   <Divider className='mlb-2' />
                   <div className='flex items-center justify-between'>
                     <Typography>Total:</Typography>
                     <Typography className='font-medium' color='text.primary'>
-                      $1690
+                      R1690
                     </Typography>
                   </div>
                 </div>
