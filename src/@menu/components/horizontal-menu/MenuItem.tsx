@@ -114,14 +114,14 @@ const MenuItem: ForwardRefRenderFunction<HTMLLIElement, MenuItemProps> = (props,
   useEffect(() => {
     const href = rest.href || (component && typeof component !== 'string' && component.props.href)
 
-    if (href) {
-      // Check if the current url matches any of the children urls
-      if (exactMatch ? pathname === href : activeUrl && pathname.includes(activeUrl)) {
-        setActive(true)
-      } else {
-        setActive(false)
-      }
+if (href) {
+    if (exactMatch ? pathname! === href : activeUrl && pathname!.includes(activeUrl)) {
+        setActive(true);
+    } else {
+        setActive(false);
     }
+}
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname])
 
