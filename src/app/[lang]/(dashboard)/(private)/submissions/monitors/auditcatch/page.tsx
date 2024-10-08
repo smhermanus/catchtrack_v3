@@ -9,7 +9,7 @@ const FormLayouts = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
-        <Typography variant='h3'>Audit a Catch</Typography>
+        <Typography variant='h3'>Log a Catch</Typography>
       </Grid>
       <Grid item xs={12}>
         <FormLayoutsAuditCatch />

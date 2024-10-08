@@ -1,291 +1,270 @@
 'use client'
 
-// React Imports
-import { useState } from 'react'
+import type { FormEvent, ChangeEvent } from 'react'
 
-// MUI Imports
-import Card from '@mui/material/Card'
-import Grid from '@mui/material/Grid'
-import Button from '@mui/material/Button'
-import Select from '@mui/material/Select'
-import Divider from '@mui/material/Divider'
-import MenuItem from '@mui/material/MenuItem'
-import TextField from '@mui/material/TextField'
-import Typography from '@mui/material/Typography'
-import CardHeader from '@mui/material/CardHeader'
-import CardContent from '@mui/material/CardContent'
-import CardActions from '@mui/material/CardActions'
-import FormControl from '@mui/material/FormControl'
-import InputLabel from '@mui/material/InputLabel'
+import React, { useState } from 'react'
 
-// Styled Component Imports
-import AppReactDatepicker from '@/libs/styles/AppReactDatepicker'
-
-type FormDataType = {
-  username: string
-  email: string
-  password: string
-  isPasswordShown: boolean
-  confirmPassword: string
-  isConfirmPasswordShown: boolean
-  firstName: string
-  lastName: string
-  country: string
-  language: string[]
-  date: Date | null
-  phoneNumber: string
+interface RightsHolder {
+  surname: string
+  id_number: string
+  company_name: string
+  rh_number: string
+  permit_number: string
+  marine_resources: string
+  quota_code: string
+  quota_qty: number
+  id: number
 }
 
-const FormLayoutsAuditCatch = () => {
-  // States
-  const [formData, setFormData] = useState<FormDataType>({
-    username: '',
-    email: '',
-    password: '',
-    isPasswordShown: false,
-    confirmPassword: '',
-    isConfirmPasswordShown: false,
-    firstName: '',
-    lastName: '',
-    country: '',
-    language: [],
-    date: null,
-    phoneNumber: ''
+interface LandingData {
+  scale_id: string
+  vessel_name: string
+  vessel_length: string
+  fishing_sector: string
+  gross_registered_tonnage: string
+  catch_area: string
+  subarea: string
+  traps_set: string
+  traps_pulled: string
+  bins_animals: string
+  total_catch_mass: string
+  number_of_catches: string
+  start_time: string
+  end_time: string
+  product_type: string
+}
+
+export default function MonitorPage() {
+  const [rightsHolder, setRightsHolder] = useState<RightsHolder | null>(null)
+  const [permitNumber, setPermitNumber] = useState('')
+
+  const [landingData, setLandingData] = useState<LandingData>({
+    scale_id: '',
+    vessel_name: '',
+    vessel_length: '',
+    fishing_sector: '',
+    gross_registered_tonnage: '',
+    catch_area: '',
+    subarea: '',
+    traps_set: '',
+    traps_pulled: '',
+    bins_animals: '',
+    total_catch_mass: '',
+    number_of_catches: '',
+    start_time: '',
+    end_time: '',
+    product_type: ''
   })
 
-  const handleReset = () => {
-    setFormData({
-      username: '',
-      email: '',
-      password: '',
-      isPasswordShown: false,
-      confirmPassword: '',
-      isConfirmPasswordShown: false,
-      firstName: '',
-      lastName: '',
-      country: '',
-      language: [],
-      date: null,
-      phoneNumber: ''
+  const fetchRightsHolder = async () => {
+    const response = await fetch(`/api/rights-holder?permitNumber=${permitNumber}`)
+
+    if (response.ok) {
+      const data = await response.json()
+
+      setRightsHolder(data)
+    } else {
+      alert('Rights holder not found')
+    }
+  }
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+
+    setLandingData(prevData => ({
+      ...prevData,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (!rightsHolder) return
+
+    const response = await fetch('/api/log-data', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...landingData, rights_holder_id: rightsHolder.id })
     })
+
+    if (response.ok) {
+      alert('Landing data submitted successfully')
+      setLandingData({
+        scale_id: '',
+        vessel_name: '',
+        vessel_length: '',
+        fishing_sector: '',
+        gross_registered_tonnage: '',
+        catch_area: '',
+        subarea: '',
+        traps_set: '',
+        traps_pulled: '',
+        bins_animals: '',
+        total_catch_mass: '',
+        number_of_catches: '',
+        start_time: '',
+        end_time: '',
+        product_type: ''
+      })
+      setRightsHolder(null)
+      setPermitNumber('')
+    } else {
+      alert('Error submitting landing data')
+    }
   }
 
   return (
-    <Card>
-      <CardHeader title='2024/2025' />
-      <Divider />
-      <form onSubmit={e => e.preventDefault()}>
-        <CardContent>
-          <Grid container spacing={5}>
-            <Grid item xs={12}>
-              <Typography variant='body2' className='font-medium' color='text.primary'>
-                1. New Log
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControl fullWidth>
-                <InputLabel>Port</InputLabel>
-                <Select
-                  multiple
-                  label='Language'
-                  value={formData.language}
-                  onChange={e => setFormData({ ...formData, language: e.target.value as string[] })}
-                >
-                  <MenuItem value='capetown'>Cape Town Harbour</MenuItem>
-                  <MenuItem value='saldanha'>Saldanha Harbour</MenuItem>
-                  <MenuItem value='durban'>Durban Harbour</MenuItem>
-                  <MenuItem value='richardsbay'>Richards Bay Harbour</MenuItem>
-                  <MenuItem value='mosselbay'>Mosselbay Harbour</MenuItem>
-                  <MenuItem value='eastlondon'>East London Harbour</MenuItem>
-                  <MenuItem value='portelizabeth'>Port Elizabeth Harbour</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <AppReactDatepicker
-                selected={formData.date}
-                showYearDropdown
-                showMonthDropdown
-                onChange={(date: Date | null) => setFormData({ ...formData, date })}
-                placeholderText='MM/DD/YYYY'
-                customInput={<TextField fullWidth label='Log Date' placeholder='MM-DD-YYYY' />}
-              />
-            </Grid>
+    <div className='container mx-auto p-4'>
+      <h1 className='text-2xl font-bold mb-4'>Monitor Page</h1>
 
-            <Grid item xs={12} sm={6}>
-              <FormControl fullWidth>
-                <InputLabel>Catch</InputLabel>
-                <Select
-                  multiple
-                  label='Catch'
-                  value={formData.language}
-                  onChange={e => setFormData({ ...formData, language: e.target.value as string[] })}
-                >
-                  <MenuItem value='Angelfish'>Angelfish</MenuItem>
-                  <MenuItem value='BlackTail'>BlackTail</MenuItem>
-                  <MenuItem value='Capedory'>Cape Dory</MenuItem>
-                  <MenuItem value='CapeSalmon'>Cape Salmon</MenuItem>
-                  <MenuItem value='Crab'>Crab</MenuItem>
-                  <MenuItem value='Hake'>Hake</MenuItem>
-                  <MenuItem value='HorseMackerel'>Horse Mackerel</MenuItem>
-                  <MenuItem value='KingFish'>KingFish</MenuItem>
-                  <MenuItem value='Longfin'>Longfin Tuna</MenuItem>
-                  <MenuItem value='RedGurnard'>Red gurnard,</MenuItem>
-                  <MenuItem value='RockCod'>Rock Cod</MenuItem>
-                  <MenuItem value='Snoek'>Snoek</MenuItem>
-                  <MenuItem value='Yellowtail'>Yellowtail</MenuItem>
-                  <MenuItem value='Yellowfin'>Yellowfin Tuna</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
+      <div className='mb-4'>
+        <input
+          type='text'
+          placeholder='Enter Permit Number'
+          className='border p-2 mr-2'
+          value={permitNumber}
+          onChange={e => setPermitNumber(e.target.value)}
+        />
+        <button onClick={fetchRightsHolder} className='bg-blue-500 text-white p-2 rounded'>
+          Fetch Rights Holder
+        </button>
+      </div>
 
-            <Grid item xs={12} sm={6}>
-              <TextField
-                fullWidth
-                label='quantity'
-                placeholder='Quantity '
-                value={formData.username}
-                onChange={e => setFormData({ ...formData, username: e.target.value })}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                fullWidth
-                label='Weight'
-                placeholder='Weight '
-                value={formData.username}
-                onChange={e => setFormData({ ...formData, username: e.target.value })}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControl fullWidth>
-                <InputLabel>Country</InputLabel>
-                <Select
-                  label='Country'
-                  value={formData.country}
-                  onChange={e => setFormData({ ...formData, country: e.target.value })}
-                >
-                  <MenuItem value='SouthAfrica'>South Africa</MenuItem>
-                  <MenuItem value='Namibia'>UK</MenuItem>
-                  <MenuItem value='Mozambique'>USA</MenuItem>
-                  <MenuItem value='Angola'>Australia</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
+      {rightsHolder && (
+        <div className='mb-4 p-4 bg-gray-100 rounded'>
+          <h2 className='text-xl font-semibold mb-2'>Rights Holder Information</h2>
+          <p>Surname: {rightsHolder.surname}</p>
+          <p>ID Number: {rightsHolder.id_number}</p>
+          <p>Company Name: {rightsHolder.company_name}</p>
+          <p>RH Number: {rightsHolder.rh_number}</p>
+          <p>Permit Number: {rightsHolder.permit_number}</p>
+          <p>Marine Resources: {rightsHolder.marine_resources}</p>
+          <p>Quota Code: {rightsHolder.quota_code}</p>
+          <p>Quota Quantity: {rightsHolder.quota_qty} kg</p>
+        </div>
+      )}
 
-            <Grid item xs={12}>
-              <Divider />
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant='body2' className='font-medium' color='text.primary'>
-                2. Permit Details
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                fullWidth
-                label='Skipper'
-                placeholder='Name'
-                value={formData.firstName}
-                onChange={e => setFormData({ ...formData, firstName: e.target.value })}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                fullWidth
-                label='Permit Holder'
-                placeholder='Individual or Company'
-                value={formData.firstName}
-                onChange={e => setFormData({ ...formData, firstName: e.target.value })}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                fullWidth
-                label='ID Number'
-                placeholder='ID'
-                value={formData.lastName}
-                onChange={e => setFormData({ ...formData, lastName: e.target.value })}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormControl fullWidth>
-                <InputLabel>Permit Types</InputLabel>
-                <Select
-                  multiple
-                  label='Language'
-                  value={formData.language}
-                  onChange={e => setFormData({ ...formData, language: e.target.value as string[] })}
-                >
-                  <MenuItem value='CatchIRNearshore'>Catch IR Nearshore</MenuItem>
-                  <MenuItem value='CatchIROffshore'>Catch IR Offshore</MenuItem>
-                  <MenuItem value='CatchNearshore'>Catch nearshore</MenuItem>
-                  <MenuItem value='CatchOffshore'>Catch offshore</MenuItem>
-                  <MenuItem value='VesselLicense'>Vessel license</MenuItem>
-                  <MenuItem value='Transport'>Transport</MenuItem>
-                  <MenuItem value='ExportLive'>Export live</MenuItem>
-                  <MenuItem value='ExportFrozen'>Export frozen</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <AppReactDatepicker
-                selected={formData.date}
-                showYearDropdown
-                showMonthDropdown
-                onChange={(date: Date | null) => setFormData({ ...formData, date })}
-                placeholderText='MM/DD/YYYY'
-                customInput={<TextField fullWidth label='Date' placeholder='MM-DD-YYYY' />}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                fullWidth
-                label='Name of Vessel'
-                type='number'
-                placeholder='Name of Vessel'
-                value={formData.phoneNumber}
-                onChange={e => setFormData({ ...formData, phoneNumber: e.target.value })}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                fullWidth
-                label='Factory Name'
-                placeholder='Name'
-                value={formData.firstName}
-                onChange={e => setFormData({ ...formData, firstName: e.target.value })}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                fullWidth
-                label='Factory Address'
-                placeholder='Street name, Suburb'
-                value={formData.lastName}
-                onChange={e => setFormData({ ...formData, lastName: e.target.value })}
-              />
-            </Grid>
-          </Grid>
-        </CardContent>
-        <Divider />
-        <CardActions>
-          <Button type='submit' variant='contained'>
+      {rightsHolder && (
+        <form onSubmit={handleSubmit} className='space-y-4'>
+          <h2 className='text-xl font-semibold mb-2'>Landing Information</h2>
+          <input
+            name='scale_id'
+            value={landingData.scale_id}
+            onChange={handleInputChange}
+            placeholder='Scale ID/Number'
+            className='border p-2 w-full'
+          />
+          <input
+            name='vessel_name'
+            value={landingData.vessel_name}
+            onChange={handleInputChange}
+            placeholder='Name of Vessel'
+            className='border p-2 w-full'
+          />
+          <input
+            name='vessel_length'
+            value={landingData.vessel_length}
+            onChange={handleInputChange}
+            placeholder='Length of Vessel'
+            className='border p-2 w-full'
+          />
+          <input
+            name='fishing_sector'
+            value={landingData.fishing_sector}
+            onChange={handleInputChange}
+            placeholder='Fishing Sector'
+            className='border p-2 w-full'
+          />
+          <input
+            name='gross_registered_tonnage'
+            value={landingData.gross_registered_tonnage}
+            onChange={handleInputChange}
+            type='number'
+            placeholder='Gross Registered Tonnage'
+            className='border p-2 w-full'
+          />
+          <input
+            name='catch_area'
+            value={landingData.catch_area}
+            onChange={handleInputChange}
+            placeholder='Catch Area'
+            className='border p-2 w-full'
+          />
+          <input
+            name='subarea'
+            value={landingData.subarea}
+            onChange={handleInputChange}
+            placeholder='Subarea'
+            className='border p-2 w-full'
+          />
+          <input
+            name='traps_set'
+            value={landingData.traps_set}
+            onChange={handleInputChange}
+            type='number'
+            placeholder='Number of Traps Set'
+            className='border p-2 w-full'
+          />
+          <input
+            name='traps_pulled'
+            value={landingData.traps_pulled}
+            onChange={handleInputChange}
+            type='number'
+            placeholder='Number of Traps Pulled'
+            className='border p-2 w-full'
+          />
+          <input
+            name='bins_animals'
+            value={landingData.bins_animals}
+            onChange={handleInputChange}
+            type='number'
+            placeholder='Number of Bins/Animals'
+            className='border p-2 w-full'
+          />
+          <input
+            name='total_catch_mass'
+            value={landingData.total_catch_mass}
+            onChange={handleInputChange}
+            type='number'
+            placeholder='Total Catch Mass (kg)'
+            className='border p-2 w-full'
+          />
+          <input
+            name='number_of_catches'
+            value={landingData.number_of_catches}
+            onChange={handleInputChange}
+            type='number'
+            placeholder='Number of Catches'
+            className='border p-2 w-full'
+          />
+          <input
+            name='start_time'
+            value={landingData.start_time}
+            onChange={handleInputChange}
+            type='datetime-local'
+            placeholder='Start Time'
+            className='border p-2 w-full'
+          />
+          <input
+            name='end_time'
+            value={landingData.end_time}
+            onChange={handleInputChange}
+            type='datetime-local'
+            placeholder='End Time'
+            className='border p-2 w-full'
+          />
+          <input
+            name='product_type'
+            value={landingData.product_type}
+            onChange={handleInputChange}
+            placeholder='Type of Product'
+            className='border p-2 w-full'
+          />
+          <button type='submit' className='bg-blue-500 text-white p-2 rounded'>
             Submit
-          </Button>
-          <Button
-            type='reset'
-            variant='outlined'
-            onClick={() => {
-              handleReset()
-            }}
-          >
-            Reset
-          </Button>
-        </CardActions>
-      </form>
-    </Card>
+          </button>
+        </form>
+      )}
+    </div>
   )
 }
-
-export default FormLayoutsAuditCatch
