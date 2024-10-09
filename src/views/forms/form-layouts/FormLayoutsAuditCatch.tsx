@@ -1,10 +1,9 @@
 'use client'
 
-import type { FormEvent, ChangeEvent } from 'react'
-
 import React, { useState } from 'react'
 
 interface RightsHolder {
+  id: number // Added this line
   surname: string
   id_number: string
   company_name: string
@@ -13,7 +12,6 @@ interface RightsHolder {
   marine_resources: string
   quota_code: string
   quota_qty: number
-  id: number
 }
 
 interface LandingData {
@@ -56,19 +54,36 @@ export default function MonitorPage() {
     product_type: ''
   })
 
-  const fetchRightsHolder = async () => {
-    const response = await fetch(`/api/rights-holder?permitNumber=${permitNumber}`)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-    if (response.ok) {
+  const fetchRightsHolder = async () => {
+    setIsLoading(true)
+    setError(null)
+
+    try {
+      const response = await fetch(`/api/pages/rights-holder?permitNumber=${permitNumber}`)
+
+      if (!response.ok) {
+        const errorBody = await response.text()
+
+        console.error(`HTTP error! status: ${response.status}, body: ${errorBody}`)
+        throw new Error(`HTTP error ${response.status}`)
+      }
+
       const data = await response.json()
 
+      console.log('Fetched rights holder data:', data) // Log the fetched data
       setRightsHolder(data)
-    } else {
-      alert('Rights holder not found')
+    } catch (err) {
+      console.error('Fetch error:', err)
+      setError('Error fetching rights holder data. Please try again.')
+    } finally {
+      setIsLoading(false)
     }
   }
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
 
     setLandingData(prevData => ({
@@ -77,18 +92,34 @@ export default function MonitorPage() {
     }))
   }
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!rightsHolder) return
 
-    const response = await fetch('/api/log-data', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...landingData, rights_holder_id: rightsHolder.id })
-    })
+    if (!rightsHolder) {
+      setError('Rights holder information is required. Please fetch a rights holder first.')
 
-    if (response.ok) {
+      return
+    }
+
+    setIsLoading(true)
+    setError(null)
+
+    try {
+      const response = await fetch('/api/pages/log-data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ ...landingData, rights_holder_id: rightsHolder.id })
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to submit landing data')
+      }
+
       alert('Landing data submitted successfully')
+
+      // Reset form and state
       setLandingData({
         scale_id: '',
         vessel_name: '',
@@ -108,8 +139,11 @@ export default function MonitorPage() {
       })
       setRightsHolder(null)
       setPermitNumber('')
-    } else {
-      alert('Error submitting landing data')
+    } catch (err) {
+      setError('Error submitting landing data. Please try again.')
+      console.error(err)
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -125,14 +159,17 @@ export default function MonitorPage() {
           value={permitNumber}
           onChange={e => setPermitNumber(e.target.value)}
         />
-        <button onClick={fetchRightsHolder} className='bg-blue-500 text-white p-2 rounded'>
-          Fetch Rights Holder
+        <button onClick={fetchRightsHolder} className='bg-blue-500 text-white p-2 rounded' disabled={isLoading}>
+          {isLoading ? 'Loading...' : 'Fetch Rights Holder'}
         </button>
       </div>
+
+      {error && <p className='text-red-500 mb-4'>{error}</p>}
 
       {rightsHolder && (
         <div className='mb-4 p-4 bg-gray-100 rounded'>
           <h2 className='text-xl font-semibold mb-2'>Rights Holder Information</h2>
+          <p>ID: {rightsHolder.id}</p>
           <p>Surname: {rightsHolder.surname}</p>
           <p>ID Number: {rightsHolder.id_number}</p>
           <p>Company Name: {rightsHolder.company_name}</p>
@@ -260,8 +297,8 @@ export default function MonitorPage() {
             placeholder='Type of Product'
             className='border p-2 w-full'
           />
-          <button type='submit' className='bg-blue-500 text-white p-2 rounded'>
-            Submit
+          <button type='submit' className='bg-blue-500 text-white p-2 rounded' disabled={isLoading}>
+            {isLoading ? 'Submitting...' : 'Submit'}
           </button>
         </form>
       )}
