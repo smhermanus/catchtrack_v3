@@ -1,23 +1,20 @@
-import { Pool } from 'pg'
+import { Client } from 'pg'
 
-console.log('Initializing database connection to Neon')
-console.log('DATABASE_URL:', process.env.DATABASE_URL ? 'Set' : 'Not set')
-console.log('NODE_ENV:', process.env.NODE_ENV)
+let client: Client | undefined
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-})
+async function getClient(): Promise<Client> {
+  if (client) return client
 
-pool.on('connect', () => {
-  console.log('Connected to the Neon database')
-})
+  client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
+  })
 
-pool.on('error', err => {
-  console.error('Unexpected error on idle client', err)
-  process.exit(-1)
-})
+  await client.connect()
 
-export default pool
+  return client
+}
+
+export default getClient

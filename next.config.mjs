@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath: process.env.BASEPATH,
+  experimental: {
+    serverComponentsExternalPackages: ['pg']
+  },
+  serverRuntimeConfig: {
+    // Will only be available on the server side
+    apiTimeout: 60 // in seconds
+  },
   redirects: async () => {
     return [
       {

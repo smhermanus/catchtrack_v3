@@ -1,7 +1,7 @@
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
-import pool from '@/lib/db'
+import getClient from '@/lib/db'
 
 export async function GET(request: NextRequest) {
   console.log('API route hit')
@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
 
   try {
     console.log('Attempting database connection to Neon')
-    const client = await pool.connect()
+    const client = await getClient()
 
     console.log('Successfully connected to Neon database')
 
@@ -28,8 +28,6 @@ export async function GET(request: NextRequest) {
     console.log('Executing query:', query)
 
     const result = await client.query(query, [permitNumber])
-
-    client.release()
 
     console.log('Query result:', result.rows)
 
@@ -43,6 +41,6 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('Error fetching rights holder from Neon:', error)
 
-    return NextResponse.json({ message: 'Internal server error' }, { status: 500 })
+    return NextResponse.json({ message: 'Internal server error', error: (error as Error).message }, { status: 500 })
   }
 }
