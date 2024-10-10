@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
     "target": "ESNext",
     "downlevelIteration": true,
     "lib": [
@@ -24,9 +28,13 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@lib/*": [
+        "./src/lib/*"
       ],
       "@core/*": [
         "./src/@core/*"
