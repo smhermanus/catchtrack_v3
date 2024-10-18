@@ -55,6 +55,7 @@ export async function POST(request: NextRequest) {
     const client = await getClient()
 
     console.log('Successfully connected to the database')
+    const status = logData.status || 'approved' // Fallback to approved if status is not provided
 
     // Insert query with corrected placeholders
     const result = await client.query(
@@ -62,10 +63,10 @@ export async function POST(request: NextRequest) {
     (cellphone_nr, permit_number, date_sent, authorised_rep_name, status)
     VALUES ($1, $2, CURRENT_TIMESTAMP, $3, $4)
     RETURNING id`,
-      [logData.cellphone_nr, logData.permit_number, logData.authorised_rep_name, 'approved']
+      [logData.cellphone_nr, logData.permit_number, logData.authorised_rep_name, status]
     )
 
-    console.log('Log data inserted successfully')
+    console.log('Log data inserted successfully:', logData)
 
     return NextResponse.json({ id: result.rows[0].id }, { status: 201 })
   } catch (error) {

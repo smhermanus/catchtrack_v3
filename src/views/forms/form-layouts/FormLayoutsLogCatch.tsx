@@ -30,6 +30,7 @@ interface RightsHolder {
 interface LandingData {
   cellphone_nr: string
   authorised_rep_name: string
+  status: string
 }
 
 export default function FormLayoutsLogCatch() {
@@ -38,7 +39,8 @@ export default function FormLayoutsLogCatch() {
 
   const [landingData, setLandingData] = useState<LandingData>({
     authorised_rep_name: '',
-    cellphone_nr: ''
+    cellphone_nr: '',
+    status: 'approved'
   })
 
   const [isLoading, setIsLoading] = useState(false)
@@ -93,7 +95,10 @@ export default function FormLayoutsLogCatch() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ ...landingData, rights_holder_id: rightsHolder.id })
+        body: JSON.stringify({
+          ...landingData,
+          status: landingData.status || 'approved'
+        })
       })
 
       if (!response.ok) {
@@ -105,7 +110,8 @@ export default function FormLayoutsLogCatch() {
       // Reset form and state
       setLandingData({
         authorised_rep_name: '',
-        cellphone_nr: ''
+        cellphone_nr: '',
+        status: 'approved'
       })
       setRightsHolder(null)
       setPermitNumber('')
@@ -240,7 +246,8 @@ export default function FormLayoutsLogCatch() {
             onClick={() => {
               setLandingData({
                 authorised_rep_name: '',
-                cellphone_nr: ''
+                cellphone_nr: '',
+                status: ''
               })
               setRightsHolder(null)
               setPermitNumber('')
