@@ -55,15 +55,14 @@ export async function POST(request: NextRequest) {
     const client = await getClient()
 
     console.log('Successfully connected to the database')
-    const status = logData.status || 'approved' // Fallback to approved if status is not provided
 
     // Insert query with corrected placeholders
     const result = await client.query(
       `INSERT INTO SKIPPER_NOTIFICATIONS
-    (cellphone_nr, permit_number, date_sent, authorised_rep_name, status)
-    VALUES ($1, $2, CURRENT_TIMESTAMP, $3, $4)
+    (cellphone_nr, permit_number, authorised_rep_name)
+    VALUES ($1, $2, $3)
     RETURNING id`,
-      [logData.cellphone_nr, logData.permit_number, logData.authorised_rep_name, status]
+      [logData.cellphone_nr, logData.permit_number, logData.authorised_rep_name]
     )
 
     console.log('Log data inserted successfully:', logData)
