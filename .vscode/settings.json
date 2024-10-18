@@ -46,8 +46,12 @@
   "editor.linkedEditing": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "cSpell.words": [
+    "authorised",
+    "BASEPATH",
+    "catchtrack",
     "customizer",
     "iconify",
+    "tailwindcss",
     "tanstack"
   ]
 }

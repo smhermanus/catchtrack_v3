@@ -76,7 +76,7 @@ export default function FormLayoutsAuditCatch() {
     setError(null)
 
     try {
-      const response = await fetch(`/api/pages/rights-holder?permitNumber=${permitNumber}`)
+      const response = await fetch(`/api/pages/monitor-capture-data?permitNumber=${permitNumber}`)
 
       if (!response.ok) {
         throw new Error(`HTTP error ${response.status}`)
@@ -115,7 +115,7 @@ export default function FormLayoutsAuditCatch() {
     setError(null)
 
     try {
-      const response = await fetch('/api/pages/log-data', {
+      const response = await fetch('/api/pages/monitor-capture-data', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

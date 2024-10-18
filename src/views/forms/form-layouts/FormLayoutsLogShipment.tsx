@@ -21,6 +21,7 @@ import InputLabel from '@mui/material/InputLabel'
 // Styled Component Imports
 import AppReactDatepicker from '@/libs/styles/AppReactDatepicker'
 
+// Type
 type FormDataType = {
   username: string
   email: string
