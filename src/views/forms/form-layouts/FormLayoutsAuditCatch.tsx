@@ -48,8 +48,8 @@ interface LandingData {
   bins_animals: string
   total_catch_mass: string
   number_of_catches: string
-  start_time: string
-  end_time: string
+  departure_date: string
+  landing_date: string
 }
 
 export default function FormLayoutsAuditCatch() {
@@ -64,8 +64,8 @@ export default function FormLayoutsAuditCatch() {
     bins_animals: '',
     total_catch_mass: '',
     number_of_catches: '',
-    start_time: '',
-    end_time: ''
+    departure_date: '',
+    landing_date: ''
   })
 
   const [isLoading, setIsLoading] = useState(false)
@@ -120,7 +120,17 @@ export default function FormLayoutsAuditCatch() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ ...landingData, rights_holder_id: rightsHolder.id })
+        body: JSON.stringify({
+          ...landingData,
+          rights_holder_id: rightsHolder.id,
+          permit_number: rightsHolder.permit_number, // Permit nr from rights holder data
+          vessel_name: rightsHolder.vessel_name, // Vessel name from rights holder data
+          vessel_length: rightsHolder.vessel_length, // Vessel length from rights holder
+          fishing_sector: rightsHolder.fishing_sector, // Fishing sector from rights holder data})
+          catch_area: rightsHolder.catch_area, // Catch area from rights holder data
+          subarea: rightsHolder.subarea, // Subarea from rights holder data
+          product_type: rightsHolder.product_type // Product type from rights holder data
+        })
       })
 
       if (!response.ok) {
@@ -138,8 +148,8 @@ export default function FormLayoutsAuditCatch() {
         bins_animals: '',
         total_catch_mass: '',
         number_of_catches: '',
-        start_time: '',
-        end_time: ''
+        departure_date: '',
+        landing_date: ''
       })
       setRightsHolder(null)
       setPermitNumber('')
@@ -405,10 +415,10 @@ export default function FormLayoutsAuditCatch() {
             <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
-                name='start_time'
+                name='departure_date'
                 label='Date of Departure'
                 type='datetime-local'
-                value={landingData.start_time}
+                value={landingData.departure_date}
                 onChange={handleInputChange}
                 InputLabelProps={{ shrink: true }}
               />
@@ -416,10 +426,10 @@ export default function FormLayoutsAuditCatch() {
             <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
-                name='end_time'
+                name='landing_date'
                 label='Date of Arrival'
                 type='datetime-local'
-                value={landingData.end_time}
+                value={landingData.landing_date}
                 onChange={handleInputChange}
                 InputLabelProps={{ shrink: true }}
               />
@@ -443,8 +453,8 @@ export default function FormLayoutsAuditCatch() {
                 bins_animals: '',
                 total_catch_mass: '',
                 number_of_catches: '',
-                start_time: '',
-                end_time: ''
+                departure_date: '',
+                landing_date: ''
               })
               setRightsHolder(null)
               setPermitNumber('')
