@@ -94,7 +94,8 @@ export default function FormLayoutsLogCatch() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          ...landingData
+          landingData,
+          rights_holder_id: rightsHolder.id
         })
       })
 
@@ -122,7 +123,7 @@ export default function FormLayoutsLogCatch() {
 
   return (
     <Card>
-      <CardHeader title='Monitor / Fishery Control Officer ' />
+      <CardHeader title='Skipper / Authorised Representative Notification' />
       <Divider />
       <form onSubmit={handleSubmit}>
         <CardContent>

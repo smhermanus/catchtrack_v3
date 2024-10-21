@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
     console.log('Successfully connected to Neon database')
 
     const query = `
-      SELECT id, first_name, surname, id_number, marine_resources, quota_code, quota_balance, date_expiry
+      SELECT id, first_name, surname, id_number, marine_resources, quota_code, quota_balance,date_expiry
       FROM RIGHTS_HOLDERS
       WHERE permit_number = $1
     `
@@ -49,7 +49,7 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const logData = await request.json()
+    const notifyRHSData = await request.json()
 
     console.log('Attempting to connect to the database')
     const client = await getClient()
@@ -58,14 +58,11 @@ export async function POST(request: NextRequest) {
 
     // Insert query with corrected placeholders
     const result = await client.query(
-      `INSERT INTO SKIPPER_NOTIFICATIONS
-    (cellphone_nr, permit_number, authorised_rep_name)
-    VALUES ($1, $2, $3)
-    RETURNING id`,
-      [logData.cellphone_nr, logData.permit_number, logData.authorised_rep_name]
+      'INSERT INTO SKIPPER_NOTIFICATIONS (cellphone_nr, permit_number, authorised_rep_name) VALUES ($1, $2, $3) RETURNING id',
+      [notifyRHSData.cellphone_nr, notifyRHSData.permit_number, notifyRHSData.authorised_rep_name]
     )
 
-    console.log('Log data inserted successfully:', logData)
+    console.log('Log data inserted successfully')
 
     return NextResponse.json({ id: result.rows[0].id }, { status: 201 })
   } catch (error) {
