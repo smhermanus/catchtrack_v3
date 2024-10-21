@@ -95,8 +95,10 @@ export default function FormLayoutsLogCatch() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          landingData,
-          rights_holder_id: rightsHolder.id
+          cellphone_nr: landingData.cellphone_nr, // Unpacking individual fields
+          authorised_rep_name: landingData.authorised_rep_name, // Unpacking individual fields
+          permit_number: rightsHolder.permit_number, // Permit number from rights holder data
+          rights_holder_id: rightsHolder.id // Sending rights holder ID as well
         })
       })
 
