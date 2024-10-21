@@ -49,7 +49,7 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const notifyRHSData = await request.json()
+    const notifyRightHoldersData = await request.json()
 
     console.log('Attempting to connect to the database')
     const client = await getClient()
@@ -58,8 +58,13 @@ export async function POST(request: NextRequest) {
 
     // Insert query with corrected placeholders
     const result = await client.query(
-      'INSERT INTO SKIPPER_NOTIFICATIONS (cellphone_nr, permit_number, authorised_rep_name, status) VALUES ($1, $2, $3, $4) RETURNING id',
-      [notifyRHSData.cellphone_nr, notifyRHSData.permit_number, notifyRHSData.authorised_rep_name, 'approved']
+      'INSERT INTO SKIPPER_NOTIFICATIONS (cellphone_nr, permit_number, authorised_rep_name, status, date_sent) VALUES ($1, $2, $3, $4, NOW()) RETURNING id',
+      [
+        notifyRightHoldersData.cellphone_nr,
+        notifyRightHoldersData.permit_number,
+        notifyRightHoldersData.authorised_rep_name,
+        'approved'
+      ]
     )
 
     console.log('Log data inserted successfully')
