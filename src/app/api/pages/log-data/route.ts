@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
     console.log('Successfully connected to Neon database')
 
     const query = `
-      SELECT id, first_name, surname, id_number, marine_resources, quota_code, quota_balance,date_expiry
+      SELECT id, first_name, surname, id_number, marine_resources, quota_code, quota_balance,date_expiry, permit_number, rh_number
       FROM RIGHTS_HOLDERS
       WHERE permit_number = $1
     `
