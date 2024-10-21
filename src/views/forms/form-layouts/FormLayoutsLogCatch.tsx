@@ -25,6 +25,7 @@ interface RightsHolder {
   quota_code: string
   quota_balance: number
   date_expiry: Date
+  permit_number: string
 }
 
 interface LandingData {

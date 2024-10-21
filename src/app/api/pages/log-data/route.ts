@@ -58,8 +58,8 @@ export async function POST(request: NextRequest) {
 
     // Insert query with corrected placeholders
     const result = await client.query(
-      'INSERT INTO SKIPPER_NOTIFICATIONS (cellphone_nr, permit_number, authorised_rep_name) VALUES ($1, $2, $3) RETURNING id',
-      [notifyRHSData.cellphone_nr, notifyRHSData.permit_number, notifyRHSData.authorised_rep_name]
+      'INSERT INTO SKIPPER_NOTIFICATIONS (cellphone_nr, permit_number, authorised_rep_name, status) VALUES ($1, $2, $3, $4) RETURNING id',
+      [notifyRHSData.cellphone_nr, notifyRHSData.permit_number, notifyRHSData.authorised_rep_name, 'approved']
     )
 
     console.log('Log data inserted successfully')
