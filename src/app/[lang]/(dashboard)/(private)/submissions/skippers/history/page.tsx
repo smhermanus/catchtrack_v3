@@ -1,8 +1,8 @@
 // Component Imports
-import UserList from '@views/apps/user/list'
+import UserList from '@views/apps/user/history_skipper'
 
 // Data Imports
-import { getUserData } from '@/app/server/actions'
+// import { getUserData } from '@/app/server/actions'
 
 /**
  * ! If you need data using an API call, uncomment the below API code, update the `process.env.API_URL` variable in the
@@ -11,16 +11,16 @@ import { getUserData } from '@/app/server/actions'
  * ! because we've used the server action for getting our static data.
  */
 
-/* const getUserData = async () => {
+const getUserData = async () => {
   // Vars
-  const res = await fetch(`${process.env.API_URL}/apps/user-list`)
+  const result = await fetch(`${process.env.API_URL}/apps/user-list`)
 
-  if (!res.ok) {
+  if (!result.ok) {
     throw new Error('Failed to fetch userData')
   }
 
-  return res.json()
-} */
+  return result.json()
+}
 
 const UserListApp = async () => {
   // Vars

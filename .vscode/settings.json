@@ -50,6 +50,7 @@
     "BASEPATH",
     "catchtrack",
     "customizer",
+    "factorycontroller",
     "iconify",
     "tailwindcss",
     "tanstack"

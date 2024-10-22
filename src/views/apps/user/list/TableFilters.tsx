@@ -89,8 +89,8 @@ const TableFilters = ({ setData, tableData }: { setData: (data: UsersType[]) => 
             >
               <MenuItem value=''>Select Status</MenuItem>
               <MenuItem value='pending'>Pending</MenuItem>
-              <MenuItem value='active'>Active</MenuItem>
-              <MenuItem value='inactive'>Inactive</MenuItem>
+              <MenuItem value='active'>Approved</MenuItem>
+              <MenuItem value='inactive'>Declined</MenuItem>
             </Select>
           </FormControl>
         </Grid>
